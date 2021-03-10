@@ -109,7 +109,7 @@ a.login{
                     <div class="card">
                         <div class="card-header">
                             <b>Car Details</b>
-                            <a href="cars" class="btn btn-secondary" style="float:right;">Home</a>
+                            <a href="../cars" class="btn btn-secondary" style="float:right;">Cars</a>
                         </div>
                         <div class="card-body">
                             <h1>{{$car->title}}</h1>
