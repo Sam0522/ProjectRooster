@@ -69,7 +69,168 @@ function myFunction() {
                     
                 </div>
                 <div>
-                    <img src="img\aaapie.png" width="40%">
+                <!DOCTYPE html>
+<html>
+<body>
+
+<p>How to delete properties of an array.</p>
+
+<p id="demo"></p>
+
+
+
+<style>
+  body {
+     font-family: verdana; 
+     font-size: 12px;
+     }
+  .tblA{ 
+      border-collapse: collapse;
+      background-color: grey;
+      border:1px solid black; 
+      }
+  .tblA td {
+      border:1px solid black; 
+      padding: 3px; 
+      white-space: nowrap;
+      background-color: grey;
+      }
+      .thh{
+          padding:20px;
+          background-color: grey;
+          border:1px solid black; 
+      }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<div id="content">
+<link rel ="stylesheet" href="css/Ajax.css">
+
+
+<div id="divA"></div>
+<!-- <script>  function laadBierTabel2(){
+
+      
+
+$.getJSON( "http://api.openweathermap.org/data/2.5/forecast?q=Zwolle&appid=6e4827081fe4da6edb58eb5484686f27&units=metric", function( json ){
+ console.log( "json:", json);
+
+
+
+let p = $("<b>");
+
+p.append( $("<b>").html('weer in '));
+p.append( $("<b>").html(weer.name));
+});
+$("#divA").append(p);
+});
+
+
+}
+</script> -->
+
+
+
+
+
+<script type="text/javascript">
+ 
+    function laadBierTabel(){
+
+      
+
+      $.getJSON( "https://std.stegion.nl/api_roster/?item=group&value=AO2B", function( json ){
+       console.log( "json:", json);
+
+
+
+
+
+
+
+
+
+  let tbl = $("<tabel>").addClass("tblA");
+  let tr = $("<tr>");
+    // tr.append( $("<th>").html("Datum-Tijd"));
+    // tr.append( $("<th>").html("tempratuur"));
+    // tr.append( $("<th>").html("LuchtVochtigheid"));
+    // tr.append( $("<th>").html("druk"));
+    // tr.append( $("<th>").html("Bewolking"));
+    // tr.append( $("<th>").html(""));
+    // tr.append( $("<th>").html("Wind"));
+
+    
+
+    tbl.append(tr);
+  
+ $(json.data).each(function (key, weer)
+  {
+      
+
+
+let tr = $("<th>");
+
+  
+    
+    // tr.append( $("<td>").html(weer.name));
+    tr.append( $("<th>").addClass("thh").html(weer.date_f ));
+    tr.append( $("<th>").addClass("thh").html(weer.data) );
+    // tr.append( $("<td>").html(weer.main.humidity+ "%"));
+    // tr.append( $("<td>").html(weer.main.pressure+ "hPa"));
+    
+    
+
+    tbl.append(tr);
+  });
+  
+  $("#divA").append(tbl);
+});
+
+
+
+
+
+
+}
+
+laadBierTabel();
+
+
+
+
+</script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+    
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
+
                 </div>
                 <div>
                 <b>Deze website wordt beveiligd door de Skerpskutter Aapie.</b>
