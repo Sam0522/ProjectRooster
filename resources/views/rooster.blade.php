@@ -143,7 +143,8 @@ $("#divA").append(p);
       $.getJSON( "https://std.stegion.nl/api_roster/?item=group&value=AO2B", function( json ){
        console.log( "json:", json);
 
-
+       $(json.data).each(function (key, weere)
+  {
 
 
 
@@ -153,7 +154,12 @@ $("#divA").append(p);
 
   let tbl = $("<tabel>").addClass("tblA");
   let tr = $("<tr>");
-    // tr.append( $("<th>").html("Datum-Tijd"));
+  let p = $("<p>");
+  tr.append( $("<th>").addClass("thh").html(weere.date_f));
+ 
+  // p.append( $("<p>").addClass("p").html(weere.weeknum ));
+  // tr.append( $("<th>").addClass("thh").html(weer.weeknum) );
+    // tr.append( $("<th>").html(weer.weeknum));
     // tr.append( $("<th>").html("tempratuur"));
     // tr.append( $("<th>").html("LuchtVochtigheid"));
     // tr.append( $("<th>").html("druk"));
@@ -165,18 +171,20 @@ $("#divA").append(p);
 
     tbl.append(tr);
   
- $(json.data).each(function (key, weer)
+ $(json.data[0].lis).each(function (key, weer)
   {
       
 
 
-let tr = $("<th>");
+    let tr = $("<tr>");
+    var vav = weer.data[1].items[1].v;
 
   
     
     // tr.append( $("<td>").html(weer.name));
-    tr.append( $("<th>").addClass("thh").html(weer.date_f ));
-    tr.append( $("<th>").addClass("thh").html(weer.data) );
+    tr.append( $("<tr>").addClass("thh").html(weer.v));
+    // tr.append( $("<th>").addClass("thh").html(weer.weeknum) );
+    // tr.append( $("<th>").addClass("thh").html(weer.data_ts) );
     // tr.append( $("<td>").html(weer.main.humidity+ "%"));
     // tr.append( $("<td>").html(weer.main.pressure+ "hPa"));
     
@@ -193,7 +201,7 @@ let tr = $("<th>");
 
 
 
-}
+});}
 
 laadBierTabel();
 
